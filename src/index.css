@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark theme (default). Text colours are checked for WCAG AA contrast by the axe E2E test. */
+  --bg: #0b1020;
+  --fg: #e6ecff;
+  --muted: #b4bdd6;
+  --accent: #7c5cff;
+  --accent2: #22d3ee;
+  --link: #67e8f9;
+  --primary-from: #6d28d9;
+  --primary-to: #0e7490;
+  --primary-fg: #ffffff;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.18);
+  --focus: #22d3ee;
+  --tier-bronze: #f59e0b;
+  --tier-silver: #cbd5e1;
+  --tier-gold: #facc15;
+  --tier-platinum: #67e8f9;
+}
+
+.light {
+  --bg: #f7f9ff;
+  --fg: #0b1020;
+  --muted: #3f4a63;
+  --accent: #6d28d9;
+  --accent2: #0e7490;
+  --link: #0e7490;
+  --card: rgba(0,0,0,0.04);
+  --border: rgba(0,0,0,0.16);
+  --focus: #6d28d9;
+  --tier-bronze: #92400e;
+  --tier-silver: #475569;
+  --tier-gold: #854d0e;
+  --tier-platinum: #0e7490;
+}
+
+/* High contrast: pure black/white, yellow accents, solid borders, no translucency. */
+.high-contrast {
+  --bg: #000000;
+  --fg: #ffffff;
+  --muted: #ffffff;
+  --accent: #ffd60a;
+  --accent2: #00e5ff;
+  --link: #ffd60a;
+  --primary-from: #ffd60a;
+  --primary-to: #ffd60a;
+  --primary-fg: #000000;
+  --card: #000000;
+  --border: #ffffff;
+  --focus: #ffd60a;
+  --tier-bronze: #ffb347;
+  --tier-silver: #ffffff;
+  --tier-gold: #ffd60a;
+  --tier-platinum: #00e5ff;
+}
+.high-contrast .glass { backdrop-filter: none; border-width: 2px; }
+.high-contrast .btn, .high-contrast .option, .high-contrast .answer-input { border-width: 2px; }
+.high-contrast [class*="opacity-"] { opacity: 1 !important; }
+
+/* Text size setting (Settings → Text size); Tailwind sizes are rem-based, so everything scales. */
+html.text-size-sm { font-size: 14px; }
+html.text-size-md { font-size: 16px; }
+html.text-size-lg { font-size: 18.5px; }
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  transition: background .3s, color .3s;
+}
+
+.glass {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: transform .15s, box-shadow .15s;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: linear-gradient(135deg, var(--primary-from), var(--primary-to)); color: var(--primary-fg); border: none; }
+
+.card { padding: 16px; }
+
+a { color: var(--link); }
+/* Links inside text must not rely on colour alone. */
+p a, li a, td a { text-decoration: underline; text-underline-offset: 2px; }
+.brand { color: var(--link); text-decoration: none; }
+input, select, button { font: inherit; }
+
+/* ---------- Navigation ---------- */
+.nav-link {
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: var(--fg);
+  text-decoration: none;
+  opacity: 0.8;
+}
+.nav-link:hover { opacity: 1; background: var(--card); }
+.nav-link.active { opacity: 1; background: var(--card); border: 1px solid var(--border); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; padding: 8px 14px; border-radius: 10px; background: var(--bg); color: var(--fg); border: 2px solid var(--focus); }
+.skip-link:focus { top: 12px; }
+
+/* ---------- Toasts ---------- */
+.toaster {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  width: min(320px, calc(100vw - 32px));
+}
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  animation: toast-in .25s ease-out;
+}
+.toast-reward { border-color: var(--accent); }
+.toast-unlock { border-color: var(--accent2); }
+.toast-error { border-color: #f87171; }
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.toast-close:hover { opacity: 1; }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Reduced motion (OS preference or in-app setting) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* ---------- Quiz ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.progress { height: 6px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); overflow: hidden; }
+.progress > div { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width .3s; }
+fieldset { border: 0; padding: 0; margin-inline: 0; min-width: 0; }
+.option {
+  position: relative; display: flex; align-items: center; gap: 8px;
+  padding: 12px 14px; border-radius: 12px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--card);
+}
+.option input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.option:hover { border-color: var(--accent2); }
+.option.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.option:has(input:focus-visible) { outline: 2px solid var(--accent2); outline-offset: 2px; }
+.option.right { border-color: #22c55e; box-shadow: 0 0 0 1px #22c55e inset; }
+.option.wrong { border-color: #f87171; box-shadow: 0 0 0 1px #f87171 inset; }
+fieldset:disabled .option { cursor: default; }
+.answer-input {
+  width: 100%; max-width: 16rem; padding: 10px 12px; border-radius: 10px;
+  background: var(--card); border: 1px solid var(--border); color: var(--fg);
+}
+.hint-list { list-style: none; padding: 10px 14px; margin: 0; border-radius: 12px; border: 1px dashed var(--accent2); font-size: .9rem; }
+.hint-list li + li { margin-top: 6px; }
+.feedback { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); }
+.feedback-correct { border-color: #22c55e; background: color-mix(in srgb, #22c55e 12%, transparent); }
+.feedback-wrong { border-color: #f87171; background: color-mix(in srgb, #f87171 12%, transparent); }
+.btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.btn.ghost { background: transparent; }
+
+/* ---------- Boss ---------- */
+.boss-card { border-color: color-mix(in srgb, #f97316 50%, var(--border)); }
+.hp-bar { height: 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); overflow: hidden; }
+.hp-bar > div { height: 100%; background: linear-gradient(90deg, #ef4444, #f97316); transition: width .4s ease-out; }
+.boss-hit { animation: boss-hit .4s ease-out; }
+@keyframes boss-hit {
+  0%, 100% { transform: none; }
+  20% { transform: translateX(-6px) rotate(-4deg); }
+  40% { transform: translateX(6px) rotate(4deg); }
+  60% { transform: translateX(-3px); }
+}
+.grayscale { filter: grayscale(1); }
+.toast-achievement { border-color: #eab308; }
+
+/* ---------- Achievements & badges ---------- */
+.achievement.locked { border-style: dashed; }
+.achievement.unlocked { border-color: color-mix(in srgb, #eab308 45%, var(--border)); }
+.tier-label { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); }
+.tier-label.tier-bronze { color: var(--tier-bronze); border-color: var(--tier-bronze); }
+.tier-label.tier-silver { color: var(--tier-silver); border-color: var(--tier-silver); }
+.tier-label.tier-gold { color: var(--tier-gold); border-color: var(--tier-gold); }
+.tier-label.tier-platinum { color: var(--tier-platinum); border-color: var(--tier-platinum); }
+.badge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; list-style: none; padding: 0; margin: 0; }
+.badge-tile { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); }
+.badge-tile.missing { border-style: dashed; }
+.badge-tile.missing > [aria-hidden="true"] { opacity: .35; filter: grayscale(1); }
+.badge-tile.earned.tier-gold, .badge-tile.earned.tier-platinum { border-color: #eab308; }
+.toast-streak { border-color: #f97316; }
+
+/* ---------- Streak & daily ---------- */
+.streak-chip { padding: 4px 10px; border-radius: 999px; border: 1px solid #f97316; color: var(--fg); text-decoration: none; font-weight: 700; }
+.streak-chip.at-risk { border-style: dashed; animation: pulse 1.6s ease-in-out infinite; }
+.streak-chip.cold { border-color: var(--border); opacity: .7; }
+@keyframes pulse { 50% { opacity: .55; } }
+.daily-card { border-color: color-mix(in srgb, #f97316 40%, var(--border)); }
+.reward-table { width: 100%; max-width: 22rem; margin: 0 auto; font-size: .9rem; }
+.reward-table td { padding: 2px 4px; }
+.reward-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.reward-table tr.total td { border-top: 1px solid var(--border); font-weight: 700; }
+
+/* ---------- Challenge ---------- */
+.timer-bar { height: 8px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); overflow: hidden; margin-top: 4px; }
+.timer-bar > div { height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent)); transition: width .1s linear; }
+.timer-bar.low > div { background: linear-gradient(90deg, #ef4444, #f97316); }
+.min-h-5 { min-height: 1.25rem; }
+
+/* ---------- Leaderboard ---------- */
+.leaderboard { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.leaderboard th, .leaderboard td { padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+.leaderboard th { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; opacity: .7; }
+.leaderboard tr.me td { background: color-mix(in srgb, var(--accent) 18%, transparent); font-weight: 600; }
+.cloud-chip { text-decoration: none; color: var(--fg); }
+
+/* Locked / undiscovered items keep readable text; they are marked by a dashed border and a label. */
+.locked-card { border-style: dashed; }
+.text-muted { color: var(--muted); }
+main:focus { outline: none; }
+/* Leave room so the last content can scroll above the notification area. */
+main { padding-bottom: 120px; }
+
+/* ---------- Header (compact on phones: one scrollable nav row) ---------- */
+.topbar-nav { overflow-x: auto; scrollbar-width: thin; }
+.topbar-nav ul { list-style: none; margin: 0; padding: 0; white-space: nowrap; }
+.topbar-nav li { flex-shrink: 0; }
+@media (min-width: 1024px) { .topbar-nav ul { flex-wrap: wrap; } }
+.theme-btn { padding: 6px 10px; }

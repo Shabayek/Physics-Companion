@@ -1,0 +1,229 @@
+{
+  "version": 2,
+  "playerName": "QA Tester",
+  "ageMode": "standard",
+  "theme": "dark",
+  "locale": "en",
+  "unlockedWorlds": [
+    "beginner",
+    "intermediate",
+    "advanced",
+    "expert"
+  ],
+  "missions": {
+    "b-speed": {
+      "missionId": "b-speed",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-gravity": {
+      "missionId": "b-gravity",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-pushpull": {
+      "missionId": "b-pushpull",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-shadow": {
+      "missionId": "b-shadow",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-magnet": {
+      "missionId": "b-magnet",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-ramp": {
+      "missionId": "b-ramp",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "i-force": {
+      "missionId": "i-force",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "i-circuit": {
+      "missionId": "i-circuit",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "i-wave": {
+      "missionId": "i-wave",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "i-lens": {
+      "missionId": "i-lens",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "i-collision": {
+      "missionId": "i-collision",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "a-projectile": {
+      "missionId": "a-projectile",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "a-orbit": {
+      "missionId": "a-orbit",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "a-heat": {
+      "missionId": "a-heat",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "a-induction": {
+      "missionId": "a-induction",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "a-spring": {
+      "missionId": "a-spring",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "e-time": {
+      "missionId": "e-time",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "e-photo": {
+      "missionId": "e-photo",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "e-tunnel": {
+      "missionId": "e-tunnel",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "e-decay": {
+      "missionId": "e-decay",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "e-rlc": {
+      "missionId": "e-rlc",
+      "completed": true,
+      "stars": 3,
+      "bestScore": 60,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    }
+  },
+  "collection": {
+    "constants": [],
+    "laws": [],
+    "badges": [],
+    "avatarItems": []
+  },
+  "currency": 500,
+  "settings": {
+    "audio": true,
+    "textSize": "md",
+    "reducedMotion": false,
+    "kidTone": false,
+    "challengeTiming": "standard"
+  },
+  "stats": {
+    "quizzesTaken": 0,
+    "questionsAnswered": 0,
+    "questionsCorrect": 0,
+    "perfectQuizzes": 0,
+    "bestAnswerStreak": 0,
+    "hintsUsed": 0,
+    "hintFreeQuizzes": 0,
+    "bossWinsWithoutHints": 0,
+    "clutchBossWins": 0,
+    "dailyChallengesCompleted": 0,
+    "perfectDailies": 0,
+    "perfectSprints": 0,
+    "longestSurvival": 0,
+    "bestChallengeCombo": 0,
+    "quantaEarned": 0
+  },
+  "streak": {
+    "current": 0,
+    "longest": 0,
+    "lastActiveDate": null
+  },
+  "daily": {
+    "lastCompletedDate": null,
+    "history": {}
+  },
+  "bosses": {},
+  "achievements": {},
+  "challenge": {
+    "runs": 0,
+    "best": {}
+  }
+}

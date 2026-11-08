@@ -1,0 +1,106 @@
+{
+  "version": 2,
+  "playerName": "QA Tester",
+  "ageMode": "standard",
+  "theme": "dark",
+  "locale": "en",
+  "unlockedWorlds": [
+    "beginner"
+  ],
+  "missions": {
+    "b-speed": {
+      "missionId": "b-speed",
+      "completed": true,
+      "stars": 2,
+      "bestScore": 30,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-gravity": {
+      "missionId": "b-gravity",
+      "completed": true,
+      "stars": 2,
+      "bestScore": 30,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-pushpull": {
+      "missionId": "b-pushpull",
+      "completed": true,
+      "stars": 2,
+      "bestScore": 30,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-shadow": {
+      "missionId": "b-shadow",
+      "completed": true,
+      "stars": 2,
+      "bestScore": 30,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-magnet": {
+      "missionId": "b-magnet",
+      "completed": true,
+      "stars": 2,
+      "bestScore": 30,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    },
+    "b-ramp": {
+      "missionId": "b-ramp",
+      "completed": true,
+      "stars": 2,
+      "bestScore": 30,
+      "attempts": 1,
+      "lastPlayed": 1793491200000
+    }
+  },
+  "collection": {
+    "constants": [],
+    "laws": [],
+    "badges": [],
+    "avatarItems": []
+  },
+  "currency": 60,
+  "settings": {
+    "audio": true,
+    "textSize": "md",
+    "reducedMotion": false,
+    "kidTone": false,
+    "challengeTiming": "standard"
+  },
+  "stats": {
+    "quizzesTaken": 0,
+    "questionsAnswered": 0,
+    "questionsCorrect": 0,
+    "perfectQuizzes": 0,
+    "bestAnswerStreak": 0,
+    "hintsUsed": 0,
+    "hintFreeQuizzes": 0,
+    "bossWinsWithoutHints": 0,
+    "clutchBossWins": 0,
+    "dailyChallengesCompleted": 0,
+    "perfectDailies": 0,
+    "perfectSprints": 0,
+    "longestSurvival": 0,
+    "bestChallengeCombo": 0,
+    "quantaEarned": 0
+  },
+  "streak": {
+    "current": 0,
+    "longest": 0,
+    "lastActiveDate": null
+  },
+  "daily": {
+    "lastCompletedDate": null,
+    "history": {}
+  },
+  "bosses": {},
+  "achievements": {},
+  "challenge": {
+    "runs": 0,
+    "best": {}
+  }
+}
